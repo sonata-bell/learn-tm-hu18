@@ -42,21 +42,23 @@ const init = async () => {
 
 init();
 
-// const predict = async () => {
-//   const prediction = await model.predict(webcam.canvas);
+const predict = async () => {
+  const prediction = await model.predict(webcam.canvas);
 
-//   for (let i = 0; i < maxPredictions; i++) {
-//     const className = prediction[i].className;
-//     const probability = prediction[i].probability.toFixed(2) * 100;
+  console.log(prediction);
 
-//     prediction.
+  // for (let i = 0; i < maxPredictions; i++) {
+  //   const className = prediction[i].className;
+  //   const probability = prediction[i].probability.toFixed(2) * 100;
 
-//   }
-// }
+  //   prediction.
+
+  // }
+};
 
 const loop = async () => {
   webcam.update();
-  // await predict();
+  await predict();
   window.requestAnimationFrame(loop);
 };
 
