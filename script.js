@@ -38,7 +38,7 @@ const init = async () => {
   await webcam.setup();
 
   video.appendChild(webcam.canvas);
-}
+};
 
 init();
 
@@ -51,7 +51,6 @@ init();
 
 //     prediction.
 
-    
 //   }
 // }
 
@@ -59,16 +58,15 @@ const loop = async () => {
   webcam.update();
   // await predict();
   window.requestAnimationFrame(loop);
-}
+};
 
-icon.addEventListener('click', (e) => {
+icon.addEventListener('click', async (e) => {
   icon.classList.toggle('on');
 
-  if(icon.classList.contains('on')) {
+  if (icon.classList.contains('on')) {
     await webcam.play();
     window.requestAnimationFrame(loop);
   } else {
     await webcam.pause();
   }
 });
-
