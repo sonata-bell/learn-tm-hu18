@@ -52,9 +52,9 @@ const predict = async () => {
 
     names.forEach((name, index) => {
       if (name.value === className) {
-        progresses[index].getElementsByClassName.width = probability;
+        progresses[index].style.width = probability;
 
-        console.log(progresses[index].getElementsByClassName.width);
+        console.log(progresses[index].style.width);
       }
     });
   }
