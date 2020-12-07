@@ -59,7 +59,10 @@ const predict = async () => {
 const loop = async () => {
   webcam.update();
   await predict();
-  window.requestAnimationFrame(loop);
+
+  if (icon.classList.contains('on')) {
+    window.requestAnimationFrame(loop);
+  }
 };
 
 icon.addEventListener('click', async (e) => {
