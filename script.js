@@ -1,4 +1,5 @@
 const names = document.querySelectorAll('.name');
+const progresses = document.querySelectorAll('.progresses > div');
 const icon = document.querySelector('.icon');
 const video = document.querySelector('.webcam');
 
@@ -45,15 +46,16 @@ init();
 const predict = async () => {
   const prediction = await model.predict(webcam.canvas);
 
-  console.log(prediction);
+  for (let i = 0; i < maxPredictions; i++) {
+    const className = prediction[i].className.trim();
+    const probability = prediction[i].probability.toFixed(2) * 100;
 
-  // for (let i = 0; i < maxPredictions; i++) {
-  //   const className = prediction[i].className;
-  //   const probability = prediction[i].probability.toFixed(2) * 100;
-
-  //   prediction.
-
-  // }
+    names.forEach((name, index) => {
+      if (name.value === className) {
+        progresses[index].getElementsByClassName.width = probability;
+      }
+    });
+  }
 };
 
 const loop = async () => {
