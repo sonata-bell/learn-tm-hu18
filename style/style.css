@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e8eaed;
+  display: flex;
+  justify-content: center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+  width: 400px;
+  height: 720px;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  position: relative;
+}
+
+.container > .webcam {
+  width: 360px;
+  height: 360px;
+  background: #e8eaed;
+  border-radius: 10px;
+}
+
+.container > .controller {
+  width: 340px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  position: absolute;
+  top: 350px;
+  left: 30px;
+  padding: 20px;
+  color: #444444;
+}
+
+.controller > .monitor {
+  font-size: 14px;
+}
+
+.controller > .result {
+  margin-top: 20px;
+}
+
+.result > .infomation {
+  margin-bottom: 5px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infomation > .name {
+  border: 0;
+  outline: 0;
+  font-size: 12px;
+  padding: 0;
+  flex: 1;
+}
+
+.result > .progress {
+  background-color: rgb(229, 233, 235);
+  height: 20px;
+  border-radius: 5px;
+}
+
+.progress > .progress-red {
+  height: 100%;
+  background: #e74c3c;
+  border-radius: 5px;
+}
+
+.progress > .progress-orange {
+  height: 100%;
+  background: #e67e22;
+  border-radius: 5px;
+}
+
+.progress > .progress-green {
+  height: 100%;
+  background: #1abc9c;
+  border-radius: 5px;
+}
+
+.progress > .progress-blue {
+  height: 100%;
+  background: #3498db;
+  border-radius: 5px;
+}
+
+.progress > .progress-purple {
+  height: 100%;
+  background: #9b59b6;
+  border-radius: 5px;
+}
+
+.container > .icon {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.icon > i {
+  font-size: 30px;
+  color: #e8eaed;
+}
+
+.icon.on > i {
+  color: #3498db;
+}
