@@ -53,7 +53,7 @@ const predict = async () => {
     names.forEach((name, index) => {
       if (
         name.value === className &&
-        progresses[index].style.width.replace('px', '') !== probability
+        progresses[index].style.width.replace('%', '') !== probability
       ) {
         progresses[index].style.width = probability + '%';
       }
