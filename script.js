@@ -9,7 +9,7 @@ const URL = './model/';
 let model, webcam, maxPredictions;
 
 if (!localStorage.getItem('robotId')) {
-  localStorage.setItem('robotId', 0);
+  localStorage.setItem('robotId', '0');
 }
 
 if (!JSON.parse(localStorage.getItem('classNames'))) {
@@ -19,7 +19,7 @@ if (!JSON.parse(localStorage.getItem('classNames'))) {
   );
 }
 
-robotId.innerHTML = localStorage.getItem('robotId');
+robotId.value = localStorage.getItem('robotId');
 
 const classNames = JSON.parse(localStorage.getItem('classNames'));
 
@@ -74,6 +74,10 @@ const loop = async () => {
     window.requestAnimationFrame(loop);
   }
 };
+
+robotId.addEventListener('change', (e) => {
+  localStorage.setItem('robotId', e.target.value);
+});
 
 icon.addEventListener('click', async (e) => {
   icon.classList.toggle('on');
