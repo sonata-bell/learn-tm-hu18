@@ -1,5 +1,5 @@
 const names = document.querySelectorAll('.name');
-const progresses = document.querySelectorAll('.progresses > div');
+const progresses = document.querySelectorAll('.progress > div');
 const icon = document.querySelector('.icon');
 const video = document.querySelector('.webcam');
 
