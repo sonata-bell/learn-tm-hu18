@@ -8,7 +8,7 @@ const URL = './model/';
 
 let model, webcam, maxPredictions;
 
-if (localStorage.getItem('robotId')) {
+if (!localStorage.getItem('robotId')) {
   localStorage.setItem('robotId', 0);
 }
 
