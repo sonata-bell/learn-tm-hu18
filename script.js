@@ -10,7 +10,7 @@ let model, webcam, maxPredictions;
 if (!JSON.parse(localStorage.getItem('classNames'))) {
   localStorage.setItem(
     'classNames',
-    JSON.stringify(['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5'])
+    JSON.stringify(['None', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5'])
   );
 
   console.log('localStorage Initialize');
@@ -51,6 +51,8 @@ const predict = async () => {
     const probability = prediction[i].probability.toFixed(2) * 100;
 
     names.forEach((name, index) => {
+      console.log(name.value, className);
+
       if (name.value === className) {
         progresses[index].style.width = probability;
 
