@@ -1,3 +1,4 @@
+const robotId = document.querySelector('.id');
 const names = document.querySelectorAll('.name');
 const progresses = document.querySelectorAll('.progress > div');
 const icon = document.querySelector('.icon');
@@ -7,14 +8,18 @@ const URL = './model/';
 
 let model, webcam, maxPredictions;
 
+if (localStorage.getItem('robotId')) {
+  localStorage.setItem('robotId', 0);
+}
+
 if (!JSON.parse(localStorage.getItem('classNames'))) {
   localStorage.setItem(
     'classNames',
     JSON.stringify(['None', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5'])
   );
-
-  console.log('localStorage Initialize');
 }
+
+robotId.innerHTML = localStorage.getItem('robotId');
 
 const classNames = JSON.parse(localStorage.getItem('classNames'));
 
