@@ -83,9 +83,19 @@ icon.addEventListener('click', async (e) => {
   icon.classList.toggle('on');
 
   if (icon.classList.contains('on')) {
+    await axios.post('http://sblabs.iptime.org:3318/api/hu18', {
+      id: parseInt(robotId.value),
+      motion: 6,
+    });
+
     await webcam.play();
     window.requestAnimationFrame(loop);
   } else {
+    await axios.post('http://sblabs.iptime.org:3318/api/hu18', {
+      id: parseInt(robotId.value),
+      motion: 5,
+    });
+
     await webcam.pause();
   }
 });
