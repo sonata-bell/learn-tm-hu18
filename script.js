@@ -54,7 +54,7 @@ const predict = async () => {
       console.log(name.value, className);
 
       if (name.value === className) {
-        progresses[index].style.width = probability;
+        progresses[index].style.width = probability + 'px';
 
         console.log(progresses[index].style.width);
       }
