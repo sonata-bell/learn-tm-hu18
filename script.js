@@ -51,12 +51,11 @@ const predict = async () => {
     const probability = prediction[i].probability.toFixed(2) * 100;
 
     names.forEach((name, index) => {
-      console.log(name.value, className);
-
-      if (name.value === className) {
-        progresses[index].style.width = probability + 'px';
-
-        console.log(progresses[index].style.width);
+      if (
+        name.value === className &&
+        progresses[index].style.width.replace('px', '') !== probability
+      ) {
+        progresses[index].style.width = probability + '%';
       }
     });
   }
