@@ -154,7 +154,7 @@ icon.addEventListener('click', async (e) => {
           data: parseInt(commandGroupData[index - 1]),
         });
       }
-    }, 100);
+    }, 5000); // 시간 변경 ms
   } else {
     clearInterval(request);
 
