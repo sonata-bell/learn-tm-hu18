@@ -94,7 +94,7 @@ const predict = async () => {
     }
   });
 
-  console.log(maxIndex.indexOf(Math.max(maxIndex)));
+  console.log(maxIndex.indexOf(Math.max(...maxIndex)));
 };
 
 const loop = async () => {
