@@ -147,16 +147,13 @@ icon.addEventListener('click', async (e) => {
     request = setInterval(() => {
       const index = maxIndex.indexOf(Math.max(...maxIndex));
 
-      // axios.post('http://sblabs.iptime.org:3318/api/hu18', {
-      //   id: parseInt(robotId.value),
-      //   command: commandGroup[index],
-      //   data: commandGroupData[index],
-      // });
-
-      console.log('index: ', index);
-      console.log('id: ', robotId.value);
-      console.log('command: ', commandGroup[index - 1].toLowerCase());
-      console.log('data: ', parseInt(commandGroupData[index - 1]));
+      if (index > 0) {
+        axios.post('http://sblabs.iptime.org:3318/api/hu18', {
+          id: robotId.value,
+          command: commandGroup[index - 1].toLowerCase(),
+          data: parseInt(commandGroupData[index - 1]),
+        });
+      }
     }, 100);
   } else {
     clearInterval(request);
