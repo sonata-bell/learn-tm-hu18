@@ -146,36 +146,42 @@ body {
   height: 100%;
   background: #7f8c8d;
   border-radius: 5px;
+  transition: all 0.1s linear;
 }
 
 .progress > .progress-red {
   height: 100%;
   background: #e74c3c;
   border-radius: 5px;
+  transition: all 0.1s linear;
 }
 
 .progress > .progress-orange {
   height: 100%;
   background: #e67e22;
   border-radius: 5px;
+  transition: all 0.1s linear;
 }
 
 .progress > .progress-green {
   height: 100%;
   background: #1abc9c;
   border-radius: 5px;
+  transition: all 0.1s linear;
 }
 
 .progress > .progress-blue {
   height: 100%;
   background: #3498db;
   border-radius: 5px;
+  transition: all 0.1s linear;
 }
 
 .progress > .progress-purple {
   height: 100%;
   background: #9b59b6;
   border-radius: 5px;
+  transition: all 0.1s linear;
 }
 
 .container > .icon {
