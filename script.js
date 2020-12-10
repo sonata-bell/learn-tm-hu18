@@ -51,8 +51,6 @@ init();
 const predict = async () => {
   const prediction = await model.predict(webcam.canvas);
 
-  let maxIndex = 0;
-
   for (let i = 0; i < maxPredictions; i++) {
     const className = prediction[i].className.trim();
     const probability = prediction[i].probability.toFixed(2) * 100;
@@ -67,9 +65,9 @@ const predict = async () => {
     });
   }
 
-  maxIndex = progresses.indexOf(Math.max(...progresses));
-
-  console.log(maxIndex);
+  progresses.forEach((progress) => {
+    console.log(parseInt(progress.style.width.replace('%', '')));
+  });
 };
 
 const loop = async () => {
