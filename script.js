@@ -11,6 +11,7 @@ const URL = './model/';
 const maxIndex = [];
 
 let model, webcam, maxPredictions;
+let request = null;
 
 if (!localStorage.getItem('robotId')) {
   localStorage.setItem('robotId', '0000');
@@ -144,7 +145,24 @@ icon.addEventListener('click', async (e) => {
 
     await webcam.play();
     window.requestAnimationFrame(loop);
+
+    request = setInterval(() => {
+      const index = maxIndex.indexOf(Math.max(...maxIndex));
+
+      // axios.post('http://sblabs.iptime.org:3318/api/hu18', {
+      //   id: parseInt(robotId.value),
+      //   command: commandGroup[index],
+      //   data: commandGroupData[index],
+      // });
+
+      console.log('index: ', index);
+      console.log('id: ', parseInt(robotId.value));
+      console.log('command: ', commandGroup[index]);
+      console.log('data: ', commandGroupData[index]);
+    }, 100);
   } else {
+    clearInterval(request);
+
     await axios.post('http://sblabs.iptime.org:3318/api/hu18', {
       id: parseInt(robotId.value),
       command: 'motion',
