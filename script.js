@@ -155,8 +155,8 @@ icon.addEventListener('click', async (e) => {
 
       console.log('index: ', index);
       console.log('id: ', robotId.value);
-      console.log('command: ', commandGroup[index].toLowerCase());
-      console.log('data: ', parseInt(commandGroupData[index]));
+      console.log('command: ', commandGroup[index - 1].toLowerCase());
+      console.log('data: ', parseInt(commandGroupData[index - 1]));
     }, 100);
   } else {
     clearInterval(request);
