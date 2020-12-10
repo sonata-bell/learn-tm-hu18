@@ -5,6 +5,7 @@ const icon = document.querySelector('.icon');
 const video = document.querySelector('.webcam');
 
 const URL = './model/';
+const maxIndex = [];
 
 let model, webcam, maxPredictions;
 
@@ -65,9 +66,15 @@ const predict = async () => {
     });
   }
 
-  progresses.forEach((progress) => {
-    console.log(parseInt(progress.style.width.replace('%', '')));
+  progresses.forEach((progress, index) => {
+    if (isNaN(parseInt(progress.style.width.replace('%', '')))) {
+      maxIndex[index] = 0;
+    } else {
+      maxIndex[index] = parseInt(progress.style.width.replace('%', ''));
+    }
   });
+
+  console.log(maxIndex);
 };
 
 const loop = async () => {
