@@ -94,8 +94,6 @@ const predict = async () => {
       maxIndex[index] = parseInt(progress.style.width.replace('%', ''));
     }
   });
-
-  console.log(maxIndex.indexOf(Math.max(...maxIndex)));
 };
 
 const loop = async () => {
@@ -156,9 +154,9 @@ icon.addEventListener('click', async (e) => {
       // });
 
       console.log('index: ', index);
-      console.log('id: ', parseInt(robotId.value));
-      console.log('command: ', commandGroup[index]);
-      console.log('data: ', commandGroupData[index]);
+      console.log('id: ', robotId.value);
+      console.log('command: ', commandGroup[index].toLowerCase());
+      console.log('data: ', parseInt(commandGroupData[index]));
     }, 100);
   } else {
     clearInterval(request);
@@ -172,3 +170,8 @@ icon.addEventListener('click', async (e) => {
     await webcam.pause();
   }
 });
+
+// window.addEventListener('beforeunload', () => {
+//   clearInterval(request);
+//   webcam.pause()
+// })
