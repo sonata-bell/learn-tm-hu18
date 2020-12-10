@@ -94,7 +94,7 @@ const predict = async () => {
     }
   });
 
-  console.log(maxIndex);
+  console.log(maxIndex.indexOf(Math.max(maxIndex)));
 };
 
 const loop = async () => {
@@ -138,7 +138,7 @@ icon.addEventListener('click', async (e) => {
   if (icon.classList.contains('on')) {
     await axios.post('http://sblabs.iptime.org:3318/api/hu18', {
       id: parseInt(robotId.value),
-      command: 'Motion',
+      command: 'motion',
       data: 241,
     });
 
@@ -147,7 +147,7 @@ icon.addEventListener('click', async (e) => {
   } else {
     await axios.post('http://sblabs.iptime.org:3318/api/hu18', {
       id: parseInt(robotId.value),
-      command: 'Motion',
+      command: 'motion',
       data: 240,
     });
 
