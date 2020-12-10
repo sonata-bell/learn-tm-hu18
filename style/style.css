@@ -1,17 +1,17 @@
 * {
   box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 body {
   background: #e8eaed;
   display: flex;
   justify-content: center;
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .container {
   width: 400px;
-  height: 770px;
+  height: 740px;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
@@ -51,6 +51,7 @@ body {
 
 .robot > .description {
   font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .robot > .id {
@@ -59,12 +60,11 @@ body {
   font-size: 14px;
   padding: 0;
   width: 40px;
-  font-family: 'Noto Sans KR', sans-serif;
   text-align: center;
 }
 
 .controller > .result {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .result > .infomation {
@@ -80,6 +80,60 @@ body {
   font-size: 12px;
   padding: 0;
   flex: 1;
+}
+
+.infomation > span {
+  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.infomation > .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown > .dropbtn {
+  background: #ffffff;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 60px;
+}
+
+.dropdown > .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 1;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.dropdown:hover > .dropdown-content {
+  display: block;
+}
+
+.dropdown-content > div {
+  color: black;
+  padding: 10px;
+  display: block;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.dropdown-content > div:hover {
+  background-color: #bdc3c7;
+}
+
+.infomation > .command-data {
+  border: 0;
+  outline: 0;
+  width: 40px;
+  font-size: 12px;
+  padding: 0;
+  text-align: center;
 }
 
 .result > .progress {
