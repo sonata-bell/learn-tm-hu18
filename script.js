@@ -12,6 +12,7 @@ const maxIndex = [];
 
 let model, webcam, maxPredictions;
 let request = null;
+let responseIndex = 0;
 
 if (!localStorage.getItem('robotId')) {
   localStorage.setItem('robotId', '0000');
@@ -147,13 +148,15 @@ icon.addEventListener('click', async (e) => {
     request = setInterval(() => {
       const index = maxIndex.indexOf(Math.max(...maxIndex));
 
-      if (index > 0) {
+      if (index > 0 && responseIndex !== index) {
         axios.post('http://sblabs.iptime.org:3318/api/hu18', {
           id: robotId.value,
           command: commandGroup[index - 1].toLowerCase(),
           data: parseInt(commandGroupData[index - 1]),
         });
       }
+
+      responseIndex = index;
     }, 5000); // 시간 변경 ms
   } else {
     clearInterval(request);
