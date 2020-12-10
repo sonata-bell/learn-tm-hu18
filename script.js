@@ -136,7 +136,7 @@ icon.addEventListener('click', async (e) => {
 
   if (icon.classList.contains('on')) {
     await axios.post('http://sblabs.iptime.org:3318/api/hu18', {
-      id: parseInt(robotId.value),
+      id: robotId.value,
       command: 'motion',
       data: 241,
     });
@@ -162,7 +162,7 @@ icon.addEventListener('click', async (e) => {
     clearInterval(request);
 
     await axios.post('http://sblabs.iptime.org:3318/api/hu18', {
-      id: parseInt(robotId.value),
+      id: robotId.value,
       command: 'motion',
       data: 240,
     });
@@ -175,7 +175,7 @@ window.addEventListener('beforeunload', () => {
   clearInterval(request);
 
   axios.post('http://sblabs.iptime.org:3318/api/hu18', {
-    id: parseInt(robotId.value),
+    id: robotId.value,
     command: 'motion',
     data: 240,
   });
