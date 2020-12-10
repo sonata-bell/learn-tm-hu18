@@ -171,7 +171,14 @@ icon.addEventListener('click', async (e) => {
   }
 });
 
-// window.addEventListener('beforeunload', () => {
-//   clearInterval(request);
-//   webcam.pause()
-// })
+window.addEventListener('beforeunload', () => {
+  clearInterval(request);
+
+  axios.post('http://sblabs.iptime.org:3318/api/hu18', {
+    id: parseInt(robotId.value),
+    command: 'motion',
+    data: 240,
+  });
+
+  webcam.pause();
+});
